@@ -3,7 +3,7 @@ import React from 'react';
 import "./Common.css";
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
-const Note = () => {
+const Note = (props) => {
     return(
         <>
             <Card className='singleNote'>
@@ -14,14 +14,17 @@ const Note = () => {
                             type = 'text' 
                             name = 'title'
                             className="form-control" 
-                            placeholder="Title here.." 
+                            value = {props.title} 
+                            disabled
                         />
                     </div>
-                    <div class="input-group">
+                    <div className="input-group">
                         <textarea 
+                            name = 'content'
                             className="form-control" 
                             aria-label="With textarea"
-                            placeholder="Write Notes..." 
+                            value = {props.content}
+                            disabled
                         ></textarea>
                     </div>
                 </div>

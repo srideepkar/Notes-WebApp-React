@@ -6,15 +6,6 @@
     font-size: 30px;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;    
 }
-.Footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: red;
-    color: white;
-    text-align: center;
-}
 .createNote{
     display: block;
     margin-top: 50px;
@@ -43,6 +34,7 @@
     padding-left: 5%;
     padding-right: 5%;
     padding-top: 2%;
+    display: flex;
 }
 .Footers{
     margin-top: auto;
