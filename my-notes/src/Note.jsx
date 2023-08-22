@@ -3,7 +3,15 @@ import React from 'react';
 import "./Common.css";
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+
 const Note = (props) => {
+    const EditData = () => {
+        props.onEdit(props.id);
+    }
+
+    const deleteData = () => {
+        props.DeleteNote(props.id);
+    }
     return(
         <>
             <Card className='singleNote'>
@@ -14,14 +22,14 @@ const Note = (props) => {
                             type = 'text' 
                             name = 'title'
                             className="form-control" 
-                            value = {props.title} 
+                            value = {props.title}
                             disabled
                         />
                     </div>
                     <div className="input-group">
-                        <textarea 
+                        <textarea
                             name = 'content'
-                            className="form-control" 
+                            className="form-control"
                             aria-label="With textarea"
                             value = {props.content}
                             disabled
@@ -32,10 +40,12 @@ const Note = (props) => {
                     <button 
                         type="button" 
                         className="button button6"
+                        onClick={EditData}
                     ><EditIcon sx={{fontSize: 30 }}/></button>
-                    <button 
-                        type="button" 
+                    <button
+                        type="button"
                         className="button button5"
+                        onClick={deleteData}
                     ><DeleteIcon sx={{fontSize: 30 }}/></button>
                 </div>
             </Card>

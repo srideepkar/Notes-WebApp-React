@@ -12,11 +12,11 @@ const CreateNote = (props) => {
         const {name, value} = event.target;
         setNote((prevData) =>{
             return {
-            ...prevData,
-            [name] : value,
+                ...prevData,
+                [name] : value,
             }
         })
-        console.log(note);
+        //console.log(note);
     }
 
     const addEvent = () =>{

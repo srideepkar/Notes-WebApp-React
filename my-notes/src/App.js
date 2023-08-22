@@ -13,11 +13,23 @@ function App() {
     setAddItem((prevData) => {
       return [...prevData, note]
     })
-  }
+  };
+  const onDelete = (id) => {
+    setAddItem((prevData) =>
+        prevData.filter((currData, index) =>{
+          return (id !== index);
+        })      
+    );
+  };
+  const onEdit = (id) => {
+
+  };
   return (
     <>
       <Header/>
-      <CreateNote passNote={addNote}/>
+      <CreateNote 
+        passNote={addNote}
+      />
       <div className='singleNotes'>
         {addItem.map((val, index) => {
           return (
@@ -26,6 +38,8 @@ function App() {
               id = {index}
               title = {val.title}
               content = {val.content}
+              DeleteNote = {onDelete}
+              EditNote = {onEdit}
             />
           );
         })}
